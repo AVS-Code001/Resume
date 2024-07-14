@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/css/ionicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="nav-popup" id="navPopup">
+        <ul>
+            <li class="list active" id="home">
+                <a href="http://localhost:7700/index.html"><span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                  <span class="text">Home</span>
+                </a>
+            </li>
+            <li class="list" id="about">
+                <a href="http://localhost:7700/ABOUT%20SECTION%20/index.html"><span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
+                  <span class="text">About</span>
+                </a>
+            </li>
+            <li class="list" id="resume">
+                <a href="http://localhost:7700/Resume%20section%20/index.html"><span class="icon"><ion-icon name="document-text-outline"></ion-icon></span>
+                  <span class="text">Resume</span>
+                </a>
+            </li>
+            <li class="list" id="contact">
+                <a href="http://localhost:7700/Contact%20Section%20/index.html"><span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                  <span class="text">Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <header class="header">
+
+    </header>
+
+    <main class="main-content">
+        <section class="resume-container">
+            <div class="resume-header">
+                <img src="Aaron.jpg" alt="Profile Picture" class="profile-pic" id="profilePic">
+                <h1>AARON SAYSON</h1>
+            </div>
+            <div class="resume-section">
+                <h2>About Me</h2>
+                <p>I am Aaron Sayson, born on October 1, 2005, in Lopez Quezon. I currently reside at 28b Visayas St, Batasan Hills. I am a graduate of Batasan Hills National High School, having completed the K-12 program.</p>
+            </div>
+            <div class="resume-section">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <p>Graduated in Pecas Elementary School</p>
+                        <span>2012 - 2018</span>
+                    </div>
+                    <div class="timeline-item">
+                        <p>Graduated in Batasan Hills National High School</p>
+                        <span>2018 - 2024</span>
+                    </div>
+                </div>
+            </div>
+            <div class="resume-section">
+                <h2>Work Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <p>Work Immersion in Animation Lab</p>
+                        <span>Assistant Coordinator</span>
+                        <p>During my work immersion at the Animation Lab, I assisted students with technical issues, including password resets, and facilitated smooth transitions between classes and activities. I maintained the lab's equipment and collaborated with teachers and students to understand the lab's functionality and the needs of its users.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <p>JDVP Trainee</p>
+                        <p>During the JDVP Training Program, I gained specialized skills in data visualization, PC maintenance, server management, and network configuration. Through hands-on exercises and real-world projects, I developed practical skills necessary for a successful career in IT. Additionally, I learned to troubleshoot technical issues efficiently and provide support to users, further enhancing my problem-solving abilities.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="resume-section">
+                <h2>Contact</h2>
+                <p>Address: 28b Visayas St Batasan Hills QC</p>
+                <p>Phone: 09283546952</p>
+                <p>Email: Saysonaaron555@gmail.com</p>
+            </div>
+            <div class="resume-section">
+                <h2>Skills</h2>
+                <ul class="skills-list">
+                    <li>Project Management</li>
+                    <li>Problem Solving</li>
+                    <li>Creativity</li>
+                    <li>Leadership</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Navbar functionality
+        const profilePic = document.getElementById('profilePic');
+        const navPopup = document.getElementById('navPopup');
+
+        profilePic.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent event from bubbling up
+            navPopup.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!navPopup.contains(event.target) && !profilePic.contains(event.target)) {
+                navPopup.classList.remove('active');
+            }
+        });
+
+        const list = document.querySelectorAll('.list');
+
+        function activeLink() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) => item.addEventListener('click', activeLink));
+    </script>
+</body>
+</html>
